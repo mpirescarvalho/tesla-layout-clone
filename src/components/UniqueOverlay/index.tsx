@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import { useTransform } from 'framer-motion';
 
@@ -23,7 +24,12 @@ const UniqueOverlay: React.FC = () => {
             <a href='#'>UI Clone</a>
           </li>
           <li>
-            <a href='#'>made with 💜</a>
+            <a href='#'>
+              made with{' '}
+              <span role='img' aria-label='purple heart'>
+                💜
+              </span>
+            </a>
           </li>
           <li>
             <a href='#'>by Marcelo Carvalho</a>
