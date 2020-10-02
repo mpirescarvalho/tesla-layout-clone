@@ -4,6 +4,7 @@ export interface CarModel {
   modelName: string;
   overlayNode: ReactNode;
   sectionRef: React.RefObject<HTMLElement>;
+  last: boolean;
 }
 
 interface ModelsContext {

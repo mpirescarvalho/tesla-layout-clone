@@ -15,14 +15,34 @@ export const Heading = styled.div`
     font-weight: 500;
     font-size: 40px;
     line-height: 48px;
-    color: #393c41;
   }
 
   > h2 {
     font-weight: normal;
     font-size: 14px;
     line-height: 20px;
-    color: #5c5e62;
+  }
+
+  &.light {
+    > h1 {
+      color: #d2d3d6;
+      text-shadow: -1px 0 #393c41, 0 1px #393c41, 1px 0 #393c41, 0 -1px #393c41;
+    }
+
+    > h2 {
+      color: #b6b9ba;
+      text-shadow: -1px 0 #5c5e62, 0 1px #5c5e62, 1px 0 #5c5e62, 0 -1px #5c5e62;
+    }
+  }
+
+  &.dark {
+    > h1 {
+      color: #393c41;
+    }
+
+    > h2 {
+      color: #5c5e62;
+    }
   }
 `;
 

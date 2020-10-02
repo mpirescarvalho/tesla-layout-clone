@@ -4,7 +4,7 @@ import { ModelSection, ModelsWrapper } from '../Model';
 import DefaultOverlayContent from '../DefaultOverlayContent';
 import UniqueOverlay from '../UniqueOverlay';
 
-import { Container } from './styles';
+import { Container, Spacer } from './styles';
 
 const Page: React.FC = () => {
   return (
@@ -12,27 +12,31 @@ const Page: React.FC = () => {
       <ModelsWrapper>
         <div>
           {[
-            'Model One',
-            'Model Two',
-            'Model Three',
-            'Model Four',
-            'Model Five',
-            'Model Six',
-            'Model Seven',
-          ].map(modelName => (
+            { name: 'Model One', lightContrast: false },
+            { name: 'Model Two', lightContrast: true },
+            { name: 'Model Three', lightContrast: true },
+            { name: 'Model Four', lightContrast: true },
+            { name: 'Model Five', lightContrast: true },
+            { name: 'Model Six', lightContrast: false },
+            { name: 'Model Seven', lightContrast: true },
+          ].map((item, index) => (
             <ModelSection
-              key={modelName}
+              key={item.name}
               className='colored'
-              modelName={modelName}
+              modelName={item.name}
+              last={index === 6}
               overlayNode={
                 <DefaultOverlayContent
-                  label={modelName}
+                  label={item.name}
                   description='Order Online for Delivery'
+                  contrast={item.lightContrast ? 'light' : 'dark'}
                 />
               }
             />
           ))}
         </div>
+
+        <Spacer />
 
         <UniqueOverlay />
       </ModelsWrapper>

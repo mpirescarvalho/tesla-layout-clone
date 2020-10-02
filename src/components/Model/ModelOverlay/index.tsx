@@ -55,7 +55,19 @@ const ModelOverlay: React.FC<Props> = ({ model, children }) => {
     value > 0 ? 'auto' : 'none'
   );
 
-  return <Container style={{ opacity, pointerEvents }}>{children}</Container>;
+  const translateY = useTransform(sectionScrollProgress, [0, 0.5], [0, -100]);
+
+  return (
+    <Container
+      style={{
+        opacity,
+        pointerEvents,
+        translateY: model.last ? translateY : 0,
+      }}
+    >
+      {children}
+    </Container>
+  );
 };
 
 export default ModelOverlay;
